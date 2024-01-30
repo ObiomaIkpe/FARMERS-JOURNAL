@@ -1,7 +1,9 @@
 import React from 'react'
-import Home from './pages/Home'
+import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MultiStepForm from './pages/Form Steps/MultiStepForm'
+
+
 
 
 const App = () => {

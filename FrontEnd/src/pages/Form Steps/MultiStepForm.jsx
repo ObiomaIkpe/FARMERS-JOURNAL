@@ -1,30 +1,44 @@
-import React from 'react';
 import "react-step-progress-bar/styles.css";
 import { useState } from 'react';
 import FarmersPersonalDetails from './FarmersPersonalDetails';
 import FarmersDetailsPlusLocation from './FarmersDetailsPlusLocation';
 import FarmersCropAndSoilDetails from './FarmersCropAndSoilDetails';
 import LastStep from './LastStep';
-import axios from 'axios'
+import axios from 'axios';
 
 
 const FormTitle = () => {
 
     const [page, setPage] = useState(0);
     const [data, setData] = useState({
-        fullname: '',
-        email: '',
-        phonenumber: '',
-        location: '',
         cropname: '',
         croptype: '',
+        email: '',
+        fullname: '',
+        location: '',
+        phonenumber: '',
+        soilhumidity: '',
         soilph: '',
         soiltemperature: ''
-    })
+    });
+    console.log(data)
 
     const registerUser = async (e) => {
         e.preventDefault();
-        axios.get('http://localhost:4100')
+        try {
+            const res = await fetch('http://localhost:4100/register',
+            {
+                method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
+            })
+            const data2 = await res.json();
+            console.log(data2)
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     const titles = ["You are almost there, let’s get a few details about you",

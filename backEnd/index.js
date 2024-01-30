@@ -3,10 +3,12 @@ const app = express();
 const connectDB = require('./connectDB');
 const dotenv = require('dotenv');
 
+app.use(express.json())
 
 dotenv.config();
 
 const cors = require('cors');
+const register = require('./controllers/user.controller.js');
 
 app.use(cors({
     credentials: true,
@@ -17,6 +19,8 @@ app.use(cors({
 app.get('/', (req, res) => {
     res.send('test works');
 })
+
+app.post('/register', register);
 
 const start = async () => {
     try {
