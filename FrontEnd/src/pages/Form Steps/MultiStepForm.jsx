@@ -1,12 +1,11 @@
 import React from 'react';
 import "react-step-progress-bar/styles.css";
-import {ProgressBar} from 'react-step-progress-bar';
 import { useState } from 'react';
 import FarmersPersonalDetails from './FarmersPersonalDetails';
 import FarmersDetailsPlusLocation from './FarmersDetailsPlusLocation';
 import FarmersCropAndSoilDetails from './FarmersCropAndSoilDetails';
 import LastStep from './LastStep';
-import { Progress } from 'flowbite-react';
+import axios from 'axios'
 
 
 const FormTitle = () => {
@@ -22,6 +21,11 @@ const FormTitle = () => {
         soilph: '',
         soiltemperature: ''
     })
+
+    const registerUser = async (e) => {
+        e.preventDefault();
+        axios.get('http://localhost:4100')
+    }
 
     const titles = ["You are almost there, let’s get a few details about you",
     "You are almost there, let’s get a few details about you and your location",
@@ -101,10 +105,12 @@ const FormTitle = () => {
             }}
         className='flex justify-between bg-green-600 rounded-[20px] px-6 py-3'>prev</button>
         <button
+        
         onClick={(e) => {
             if(page == titles.length - 1){
                 console.log('end')
                 alert('form submitted') 
+                registerUser(e);
             } else {
                 console.log('forward')
                 setPage((currPage) => currPage + 1)
