@@ -4,7 +4,6 @@ import FarmersPersonalDetails from './FarmersPersonalDetails';
 import FarmersDetailsPlusLocation from './FarmersDetailsPlusLocation';
 import FarmersCropAndSoilDetails from './FarmersCropAndSoilDetails';
 import LastStep from './LastStep';
-import axios from 'axios';
 
 
 const FormTitle = () => {

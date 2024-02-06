@@ -1,6 +1,8 @@
 
 import Nav from '../components/Nav';
 import StepCards from './StepCards';
+import { FaCirclePlus } from "react-icons/fa6";
+
 
 import { Link } from 'react-router-dom';
 
@@ -30,11 +32,19 @@ const Home = () => {
            </div>    
       </div>
 
+      <div className='flex flex-row items-center justify-center gap-4 p-5 bg-grey-600'>
+        <Link to='/add-farm-produce' className='flex flex-row gap-4 items-center justify-center'>
+      <p className='gap-4 uppercase'>Add farm products</p>
+      <span><FaCirclePlus size={28} color='#4d7c0f'/></span>
+        </Link>
+    </div>
+
 {/* How it works section */}
       <div className='bg-yellow-100 mx-auto'>
         {/* How it works. */}
       <div className="text-center py-6"><span className="text-stone-900 text-xl font-semibold font-['Inter']">How it</span><span className="text-lime-700 text-xl font-semibold font-['Inter']"> works</span></div>
 
+    
 
       {/* Images in the workflow */}
       <div className=' flex flex-col lg:flex-row '> 

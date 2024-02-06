@@ -1,6 +1,6 @@
 import React from 'react'
 import hamburger from '../images/hamburger.svg'
-import Union from '../images/Union.svg';
+import Union from '../images/Union.svg'; 
 import notification from '../images/notification.svg'
 
 
@@ -10,7 +10,7 @@ import notification from '../images/notification.svg'
 const Nav = () => {
   return (
     <nav className='flex flex-row justify-between p-3 items-center'>
-        <div className='flex flex-col'>
+        <div className='flex flex-col'> 
             <img src={Union} alt='farm logo'/> 
         </div>
 
