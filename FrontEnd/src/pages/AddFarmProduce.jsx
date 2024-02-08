@@ -62,7 +62,7 @@ const AddFarmProduce = () => {
         className='w-full bg-lime-700 p-3 mt-8 rounded-lg'>
           Add products
         </button>
-
+        
         {
           farmProduce.map((item, index) => (
             <div key={index} className='flex flex-row items-center justify-center gap-4 w-full'>
